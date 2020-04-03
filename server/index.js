@@ -10,6 +10,9 @@ const mongo = require('mongodb');
 const routes = require('./routes/routes');
 const fileUpload = require('express-fileupload');
 const ObjectId = require('mongodb').ObjectId;
+const path = require('path');
+
+require("dotenv").config();
 
 app.use(fileUpload());
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -23,7 +26,7 @@ app.use(session({
 }));
 app.use(passport.initialize());
 app.use(passport.session());
-
+app.use(express.static(path.join(__dirname, "client", "build")))
 app.use(express.static('uploads'));
 
 mongo.connect(config.mongoURI, (err, db) => {
@@ -32,20 +35,14 @@ mongo.connect(config.mongoURI, (err, db) => {
     } else {
         console.log('Successful database connection');
 
-
-        // db.collection('users').update(
-        //     { _id: ObjectId("5e7328d1d2d2f719248682cf") },
-        //     { $set:
-        //             {
-        //                 cart: [1,2,3]
-        //             }
-        //     }
-        // );
-
-
+//separating authentication and routing files with 'auth.js' and 'routes.js'
         auth(app, db);
 
         routes(app, db);
+
+        app.get("*", (req, res) => {
+            res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+        });
 
         const port = process.env.PORT || 5000;
         app.listen(port, () => {
