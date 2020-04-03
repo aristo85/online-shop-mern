@@ -1,0 +1,9 @@
+export const LOGIN_USER = 'LOGIN_USER';
+export const REGISTER_USER = 'REGISTER_USER';
+export const AUTH_USER = "AUTH_USER";
+export const LOGOUT_USER = "LOGOUT_USER";
+export const GET_PRODUCTS = "GET_PRODUCTS";
+export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
+export const SEARCH_PRODUCT = "SEARCH_PRODUCT";
+export const ADD_CART_TO_USER = "ADD_CART_TO_USER";
+export const ADD_PAYMENT_TO_USER = "ADD_PAYMENT_TO_USER";

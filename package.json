@@ -1,0 +1,36 @@
+{
+  "name": "mern-boilerplate",
+  "version": "1.0.0",
+  "description": "MERN",
+  "main": "server/index.js",
+  "engines": {
+    "node": "12.13.0",
+    "npm": "6.13.1"
+  },
+  "scripts": {
+    "start": "node server/index.js",
+    "backend": "nodemon server/index.js",
+    "fronted": "npm run start --prefix client",
+    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\""
+  },
+  "author": "Ari",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^2.0.0",
+    "bcrypt": "^3.0.8",
+    "body-parser": "^1.18.3",
+    "concurrently": "^5.1.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.17.1",
+    "express-fileupload": "^1.1.6",
+    "express-session": "^1.17.0",
+    "http-proxy-middleware": "^1.0.2",
+    "jsonwebtoken": "^8.5.1",
+    "mime": "^2.4.4",
+    "mongodb": "^2.2.36",
+    "mongoose": "^5.4.20",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "react-icons": "^2.2.7"
+  }
+}
