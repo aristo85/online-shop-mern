@@ -1,21 +1,23 @@
 {
-  "name": "mern-boilerplate",
+  "name": "online-shop-mern",
   "version": "1.0.0",
-  "description": "MERN",
+  "description": "online shop built with MERN stack",
   "main": "server/index.js",
   "engines": {
-    "node": "12.13.0",
+    "node": "12.13.x",
     "npm": "6.13.1"
   },
   "scripts": {
+    "client-install": "npm install --prefix client",
     "start": "node server/index.js",
-    "backend": "nodemon server/index.js",
+    "server": "nodemon server/index.js",
     "fronted": "npm run start --prefix client",
-    "dev": "concurrently \"npm run backend\" \"npm run start --prefix client\"",
-    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Ari",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "assert": "^2.0.0",
     "bcrypt": "^3.0.8",
@@ -34,5 +36,8 @@
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "react-icons": "^2.2.7"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }

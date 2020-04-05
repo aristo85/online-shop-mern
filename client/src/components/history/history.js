@@ -32,7 +32,7 @@ class History extends Component {
                         <th>#</th>
                         <th>Payment Id</th>
                         <th>quantity</th>
-                        <th>Price each</th>
+                        <th>Price</th>
                         <th>Date of purchase</th>
                     </tr>
                     </thead>
@@ -41,7 +41,7 @@ class History extends Component {
                         <tr key={index}>
                             <th scope="row">{index+1}</th>
                             <td>{item.paymentId}</td>
-                            <td>{item.quantity}</td>
+                            <td>1</td>
                             <td>${item.price}</td>
                             <td>{item.dateOfPurchase}</td>
                         </tr>

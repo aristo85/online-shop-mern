@@ -42,7 +42,7 @@ class LandingPage extends Component {
                     productList={this.props.products.productList}
                 />
 
-                <div style={{width: '75%', margin: '3rem auto'}}>
+                <div className="mobile" >
                     <div style={{textAlign: 'center'}}>
                         <h2>Let's travel</h2>
                     </div>

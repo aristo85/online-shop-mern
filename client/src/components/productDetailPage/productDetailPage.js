@@ -70,8 +70,8 @@ class ProductDetailPage extends Component {
                                     <CardText>{this.state.product.description}</CardText>
                                 </CardBody>
                             </Card>
-                            <div className="text-center mt-5">
-                                <Button className="w-50 btn btn-success text-sm-center"
+                            <div className="text-center">
+                                <Button className=" btn btn-success text-sm-center" block
                                     onClick={() => this.props.onAddToCart(this.state.productId, this.props.user.userData) }
                                 >Add to Cart</Button>
                             </div>

@@ -2,7 +2,7 @@ import axios from "axios";
 import { GET_PRODUCTS, FILTER_PRODUCTS, SEARCH_PRODUCT } from "./types";
 
 export function getProducts(){
-    const request = axios.get('/api/product/getProducts')
+    const request = axios.get('api/product/getProducts')
         .then(response => {
             if (!response.data.success) {
                 return (response.data)

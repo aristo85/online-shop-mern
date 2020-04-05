@@ -1,4 +1,6 @@
+// this can be used with 'dotenv' module for environment
+// variable, here if just going to be ignored with .gitignore
 module.exports = {
     mongoURI: process.env.MONGODB_URI,
-    // SESSION_SECRET: 9833498249
-}
+    SESSION_SECRET: process.env.SECRET
+};
